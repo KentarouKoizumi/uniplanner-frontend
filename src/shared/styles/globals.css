@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Chrome, Safari, Edge, Opera */
+@supports (-webkit-touch-callout: none) {
+  .no-tap-highlight {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+
+/* Firefox */
+@supports (-moz-appearance: none) {
+  .no-tap-highlight {
+    -moz-appearance: none;
+  }
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  line-height: inherit;
+  margin: 0;
+}
+
+div#__next {
+  height: 100%;
+}
