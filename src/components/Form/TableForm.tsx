@@ -52,10 +52,10 @@ export const TableForm = ({
       setSelected([
         ...filterd,
         ...[...Array(periods)].map((_, index) => ({
-          id: stringDate + "-" + index,
+          id: `${stringDate}-${index + 1}`,
           date: new Date(stringDate),
           stringDate: stringDate,
-          period: index,
+          period: index + 1,
         })),
       ]);
     }
