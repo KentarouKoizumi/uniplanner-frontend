@@ -131,7 +131,7 @@ export const CalenderForm = ({
             <div className="p-1">
               <div
                 className={clsx(
-                  "flex items-center justify-center w-8 h-8 text-gray-400",
+                  "flex items-center justify-center w-8 h-8",
                   index === 0
                     ? "text-red-400"
                     : index === 6
