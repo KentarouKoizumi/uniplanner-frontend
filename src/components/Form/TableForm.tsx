@@ -24,7 +24,7 @@ type FormattedDate = {
   stringDate: string;
 };
 
-const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const days = ["日", "月", "火", "水", "木", "金", "土"];
 
 export const TableForm = ({
   periods,
@@ -318,7 +318,7 @@ const TableButtonVariants = {
     "bg-primary text-white hover:bg-white hover:text-primary hover:shadow-md",
   primarySub:
     "bg-white hover:border-2 hover:border-primary-300 hover:shadow-md",
-  disabled: "bg-gray-100 cursor-default",
+  disabled: "bg-gray-300 cursor-default border-[#999]",
 };
 
 export const TableButton = ({
@@ -335,12 +335,20 @@ export const TableButton = ({
   return (
     <div
       className={clsx(
-        "flex items-center justify-center shadow-sm border-[0.01rem] border-gray-100 h-8 rounded-sm transition duration-200 ease-in",
+        "flex items-center justify-center shadow-sm border-[0.01rem] border-gray-100 h-8 rounded-sm transition duration-200 ease-in relative",
         TableButtonVariants[variant],
         width,
         className
       )}
       onClick={() => clickHandler()}
+      style={
+        variant === "disabled"
+          ? {
+              backgroundImage:
+                "linear-gradient(to right top, transparent calc(50% - 0.5px), #bbb 50%, #bbb calc(50% + 0.5px), transparent calc(50% + 1px))",
+            }
+          : {}
+      }
     >
       {children}
     </div>
