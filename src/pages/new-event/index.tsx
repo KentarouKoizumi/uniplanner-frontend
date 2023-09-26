@@ -149,6 +149,7 @@ const Page = () => {
                 onChange={(e) => {
                   setEventName(e.target.value);
                 }}
+                required
               />
               <InputField
                 label="イベントの説明"
@@ -157,6 +158,7 @@ const Page = () => {
                 onChange={(e) => {
                   setEventDescription(e.target.value);
                 }}
+                required
               />
               <InputField
                 label="一日のコマ数"
@@ -175,6 +177,7 @@ const Page = () => {
                   }
                   setNumOfPeriod(Number(e.target.value));
                 }}
+                required
               />
               <Checkbox
                 labelContent={<p>週次のイベントかどうか</p>}
