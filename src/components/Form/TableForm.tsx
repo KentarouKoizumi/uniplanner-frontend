@@ -315,9 +315,9 @@ type TableButtonProps = {
 };
 const TableButtonVariants = {
   primary:
-    "bg-primary text-white hover:bg-white hover:text-primary hover:shadow-md",
+    "bg-primary text-white hover:bg-white hover:text-primary hover:shadow-md border-gray-100",
   primarySub:
-    "bg-white hover:border-2 hover:border-primary-300 hover:shadow-md",
+    "bg-white hover:border-2 hover:border-primary-300 hover:shadow-md border-gray-100",
   disabled: "bg-gray-300 cursor-default border-[#999]",
 };
 
@@ -335,7 +335,7 @@ export const TableButton = ({
   return (
     <div
       className={clsx(
-        "flex items-center justify-center shadow-sm border-[0.01rem] border-gray-100 h-8 rounded-sm transition duration-200 ease-in relative",
+        "flex items-center justify-center shadow-sm border-[0.01rem] h-8 rounded-sm transition duration-200 ease-in relative",
         TableButtonVariants[variant],
         width,
         className
