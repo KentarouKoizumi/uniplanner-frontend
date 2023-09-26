@@ -130,7 +130,14 @@ export const CalenderForm = ({
           {days.map((day, index) => (
             <div className="p-1">
               <div
-                className="flex items-center justify-center w-8 h-8 text-gray-400"
+                className={clsx(
+                  "flex items-center justify-center w-8 h-8 text-gray-400",
+                  index === 0
+                    ? "text-red-400"
+                    : index === 6
+                    ? "text-blue-400"
+                    : "text-gray-400"
+                )}
                 key={index}
               >
                 {day}
