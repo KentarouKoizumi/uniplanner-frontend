@@ -94,7 +94,6 @@ export const TableForm = ({
     [] as any[][]
   );
   useEffect(() => {
-    console.log(page, chunkedDates.length);
     if (page >= chunkedDates.length) {
       setPage(chunkedDates.length - 1);
     }
@@ -329,7 +328,6 @@ export const TableButton = ({
   className,
 }: TableButtonProps) => {
   const clickHandler = () => {
-    console.log("click");
     onClick && onClick();
   };
   return (

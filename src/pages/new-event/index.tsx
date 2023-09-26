@@ -106,9 +106,6 @@ const Page = () => {
       },
       {
         onSuccess: (data, variable, context) => {
-          console.log(data);
-          console.log(variable);
-          console.log(context);
           alert(`イベントを作成しました。${data.data.id}`);
         },
         onError: () => {
@@ -117,9 +114,6 @@ const Page = () => {
       }
     );
   };
-  useEffect(() => {
-    console.log(selectedDate);
-  }, [selectedDate]);
 
   return (
     <>
@@ -156,25 +150,6 @@ const Page = () => {
                   setEventDescription(e.target.value);
                 }}
               />
-              {/* <InputField
-                label="一日のコマ数"
-                type="number"
-                className="mb-4"
-                defaultValue="7"
-                onBlur={(e) => {
-                  if (Number(e.target.value) > 10) {
-                    alert("一日のコマ数は10コマまでです。");
-                    setNumOfPeriod(10);
-                    return;
-                  } else if (Number(e.target.value) < 1) {
-                    alert("一日のコマ数は1コマ以上です。");
-                    setNumOfPeriod(1);
-                    return;
-                  }
-                  setNumOfPeriod(Number(e.target.value));
-                }}
-                required
-              /> */}
               <NumberForm
                 label="一日のコマ数"
                 className="mb-4"
