@@ -64,10 +64,6 @@ const Page = () => {
       alert("イベント名を入力してください。");
       return;
     }
-    if (eventDescription === "") {
-      alert("イベントの説明を入力してください。");
-      return;
-    }
     if (selectedDate.length === 0 && !isWeekly) {
       alert("日程を選択してください。");
       return;
@@ -159,7 +155,6 @@ const Page = () => {
                 onChange={(e) => {
                   setEventDescription(e.target.value);
                 }}
-                required
               />
               {/* <InputField
                 label="一日のコマ数"
