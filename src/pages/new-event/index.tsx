@@ -185,7 +185,7 @@ const Page = () => {
                 required
               />
               <Checkbox
-                labelContent={<p>週次のイベントかどうか</p>}
+                labelContent={<p>日付を指定せず一週間の予定を調整する</p>}
                 onChange={(e) => {
                   setIsWeekly(e.target.checked);
                 }}
