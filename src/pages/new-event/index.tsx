@@ -9,6 +9,7 @@ import { CalenderForm, DateButton } from "@/components/Form/CalenderForm";
 import PageHead from "@/components/Layout/PageHead";
 import { TableForm } from "@/components/Form/TableForm";
 import clsx from "clsx";
+import { NumberForm } from "@/components/Form/NumberForm";
 
 type BannedDate = {
   id: string;
@@ -63,10 +64,6 @@ const Page = () => {
       alert("イベント名を入力してください。");
       return;
     }
-    if (eventDescription === "") {
-      alert("イベントの説明を入力してください。");
-      return;
-    }
     if (selectedDate.length === 0 && !isWeekly) {
       alert("日程を選択してください。");
       return;
@@ -109,9 +106,6 @@ const Page = () => {
       },
       {
         onSuccess: (data, variable, context) => {
-          console.log(data);
-          console.log(variable);
-          console.log(context);
           alert(`イベントを作成しました。${data.data.id}`);
         },
         onError: () => {
@@ -120,9 +114,6 @@ const Page = () => {
       }
     );
   };
-  useEffect(() => {
-    console.log(selectedDate);
-  }, [selectedDate]);
 
   return (
     <>
@@ -149,6 +140,7 @@ const Page = () => {
                 onChange={(e) => {
                   setEventName(e.target.value);
                 }}
+                required
               />
               <InputField
                 label="イベントの説明"
@@ -158,26 +150,17 @@ const Page = () => {
                   setEventDescription(e.target.value);
                 }}
               />
-              <InputField
+              <NumberForm
                 label="一日のコマ数"
-                type="number"
                 className="mb-4"
-                defaultValue="7"
-                onChange={(e) => {
-                  if (Number(e.target.value) > 10) {
-                    alert("一日のコマ数は10コマまでです。");
-                    setNumOfPeriod(10);
-                    return;
-                  } else if (Number(e.target.value) < 1) {
-                    alert("一日のコマ数は1コマ以上です。");
-                    setNumOfPeriod(1);
-                    return;
-                  }
-                  setNumOfPeriod(Number(e.target.value));
-                }}
+                number={numOfPeriod}
+                setNumber={setNumOfPeriod}
+                min={1}
+                max={10}
+                required
               />
               <Checkbox
-                labelContent={<p>週次のイベントかどうか</p>}
+                labelContent={<p>日付を指定せず一週間の予定を調整する</p>}
                 onChange={(e) => {
                   setIsWeekly(e.target.checked);
                 }}

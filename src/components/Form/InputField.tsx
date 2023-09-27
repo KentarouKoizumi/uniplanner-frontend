@@ -18,6 +18,7 @@ type InputFieldProps = FieldWrapperPassThroughProps & {
   bgColor?: keyof typeof inputFieldBgColorVariants;
   hasBorder?: boolean;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
 };
 
 export const InputField = (props: InputFieldProps) => {
@@ -35,6 +36,7 @@ export const InputField = (props: InputFieldProps) => {
     bgColor = "white",
     hasBorder = true,
     onChange,
+    onBlur,
   } = props;
   return (
     <FieldWrapper
@@ -58,6 +60,7 @@ export const InputField = (props: InputFieldProps) => {
           defaultValue={defaultValue}
           placeholder={placeholder}
           onChange={onChange}
+          onBlur={onBlur}
         />
       </div>
     </FieldWrapper>

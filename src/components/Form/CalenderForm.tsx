@@ -9,6 +9,8 @@ type CalenderType = {
   calender: Array<Array<number | undefined>>;
 };
 
+const days = ["日", "月", "火", "水", "木", "金", "土"];
+
 function generateCalender(year: number, month: number): CalenderType {
   // 指定された月の1日の曜日を取得 (0: 日曜日, 1: 月曜日, ... , 6: 土曜日)
   const firstDay = new Date(year, month - 1, 1).getDay();
@@ -124,6 +126,25 @@ export const CalenderForm = ({
         </Button>
       </div>
       <div className="">
+        <div className="flex">
+          {days.map((day, index) => (
+            <div className="p-1">
+              <div
+                className={clsx(
+                  "flex items-center justify-center w-8 h-8",
+                  index === 0
+                    ? "text-red-400"
+                    : index === 6
+                    ? "text-blue-400"
+                    : "text-gray-400"
+                )}
+                key={index}
+              >
+                {day}
+              </div>
+            </div>
+          ))}
+        </div>
         {calender?.calender.map((week, index) => (
           <div className="flex" key={index}>
             {week.map((date, index) => (
