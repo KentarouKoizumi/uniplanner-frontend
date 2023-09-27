@@ -316,7 +316,7 @@ const TableButtonVariants = {
   primary:
     "bg-primary text-white hover:bg-white hover:text-primary hover:shadow-md border-gray-100",
   primarySub:
-    "bg-white hover:border-2 hover:border-primary-300 hover:shadow-md border-gray-100",
+    "bg-white hover:border-2 hover:border-primary-300 hover:shadow-md border-[#999]",
   disabled: "bg-gray-300 cursor-default border-[#999]",
 };
 
