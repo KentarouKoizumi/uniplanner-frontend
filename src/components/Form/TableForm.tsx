@@ -312,6 +312,7 @@ type TableButtonProps = {
   children?: React.ReactNode;
   className?: string;
 };
+// ここの色を変えたよ
 const TableButtonVariants = {
   primary:
     "bg-primary text-white hover:bg-white hover:text-primary hover:shadow-md border-gray-100",
